@@ -1,18 +1,13 @@
 extends KinematicBody2D
 
+export var speed = 100
+var player_position
+var target_position
+onready var player = get_parent().get_node("Player")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-#	pass
-#	pass
+func _physics_process(delta):
+	player_position = player.position
+	target_position = (player_position - position).normalized()
+	if position.distance_to(player_position)<125:
+		move_and_slide(target_position *speed)
+		

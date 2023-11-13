@@ -543,3 +543,6 @@ position = Vector2( 473, 216 )
 
 [node name="Slime2" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 257, 427 )
+
+[node name="Slime3" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 325, 232 )
