@@ -58,7 +58,7 @@ position = Vector2( 0, -10 )
 scale = Vector2( 0.115297, 0.11875 )
 frames = SubResource( 8 )
 animation = "mover"
-frame = 5
+frame = 4
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]
