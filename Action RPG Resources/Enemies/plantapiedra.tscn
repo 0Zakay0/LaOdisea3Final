@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Piedra COn Planta.png" type="Texture" id=1]
 
@@ -50,17 +50,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=10]
-radius = 2.0
-
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -1 )
 scale = Vector2( 0.0609375, 0.0570313 )
 frames = SubResource( 9 )
-frame = 3
+frame = 6
 playing = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 10 )
