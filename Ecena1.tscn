@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Action RPG Resources/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Action RPG Resources/World/GrassBackground.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Action RPG Resources/Enemies/hadita.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Action RPG Resources/Enemies/arbolito.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Action RPG Resources/Enemies/limiteNivel.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Action RPG Resources/Enemies/plantapiedra.tscn" type="PackedScene" id=11]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -519,6 +520,12 @@ position = Vector2( 49.4583, -135.158 )
 [node name="StaticBody2D2" parent="pasto" instance=ExtResource( 10 )]
 position = Vector2( -192.115, -49.0888 )
 rotation = 1.5708
+
+[node name="StaticBody2D3" parent="pasto" instance=ExtResource( 11 )]
+position = Vector2( 19.1544, 52.6886 )
+
+[node name="StaticBody2D4" parent="pasto" instance=ExtResource( 11 )]
+position = Vector2( -79.4763, 46.1434 )
 
 [node name="DirtPahtTitleMap" type="TileMap" parent="."]
 scale = Vector2( 3, 3 )
