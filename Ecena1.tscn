@@ -544,6 +544,13 @@ tile_data = PoolIntArray( -131067, 0, 0, -131066, 0, 1, -131065, 0, 1, -131064, 
 
 [node name="YSort" type="YSort" parent="."]
 
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -27, 254 )
+
+[node name="Camera2D" type="Camera2D" parent="YSort/Player"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
 [node name="Hadita2" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 526, 598 )
 scale = Vector2( 2.19153, 2.57986 )
@@ -554,14 +561,6 @@ scale = Vector2( 2.19153, 2.57986 )
 
 [node name="SlimeAzul" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 84, 648 )
-
-[node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( -49, 264 )
-
-[node name="Camera2D" type="Camera2D" parent="YSort/Player"]
-position = Vector2( 1, -4 )
-current = true
-zoom = Vector2( 0.5, 0.5 )
 
 [node name="StaticBody2D5" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 213, 285 )
@@ -619,3 +618,6 @@ scale = Vector2( 3.4979, 3.05569 )
 [node name="StaticBody2D9" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 617, 372 )
 scale = Vector2( 3.4979, 3.05569 )
+
+[editable path="YSort/Player"]
+[editable path="YSort/Player/Position2D/Hitbox"]

@@ -24,3 +24,12 @@ func _physics_process(delta):
 	if not player_detected:
 		var direction_to_original = (original_position - position).normalized()
 		move_and_slide(direction_to_original * speed)
+
+
+
+
+
+func _on_Hurtbox_area_entered(area):
+	# Verificar si el área entrante pertenece al jugador antes de eliminar
+	if area.get_parent().get_parent() == player:
+		queue_free()
