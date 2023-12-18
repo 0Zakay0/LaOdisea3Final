@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GrassBackground.png-e0a257ffbe076892cd18ca854841bacb.stex"
+path="res://.import/muñecooo.png-d2348008c9666671481d43944c427049.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Action RPG Resources/World/GrassBackground.png"
-dest_files=[ "res://.import/GrassBackground.png-e0a257ffbe076892cd18ca854841bacb.stex" ]
+source_file="res://muñecooo.png"
+dest_files=[ "res://.import/muñecooo.png-d2348008c9666671481d43944c427049.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
