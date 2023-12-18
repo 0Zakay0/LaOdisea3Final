@@ -9,9 +9,9 @@ onready var animationPlayer = $AnimationPlayer
 var is_attacking = false
 var attack_cooldown = 1.0
 var attack_timer = 0.0
-var damage_amount = 5
+var damage_amount = 1
 
-var player_health = 105  # Initial health value
+var player_health = 101  # Initial health value
 
 # HUD elements
 onready var healthLabel = $HUDCanvasLayer/HealthLabel
