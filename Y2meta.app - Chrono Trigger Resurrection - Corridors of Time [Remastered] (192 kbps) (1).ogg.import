@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Y2meta.app - Chrono Trigger Resurrection - Corridors of Time [Remastered] (192 kbps) (1).ogg-0cadeb30e2a21be4565de1b552f1e979.oggstr"
+
+[deps]
+
+source_file="res://Y2meta.app - Chrono Trigger Resurrection - Corridors of Time [Remastered] (192 kbps) (1).ogg"
+dest_files=[ "res://.import/Y2meta.app - Chrono Trigger Resurrection - Corridors of Time [Remastered] (192 kbps) (1).ogg-0cadeb30e2a21be4565de1b552f1e979.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

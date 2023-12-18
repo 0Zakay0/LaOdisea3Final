@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://cristales.png" type="Texture" id=1]
+[ext_resource path="res://hitboxes/Hurtbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://cristalAmarillo.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 27.0185
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 664.815
+
+[node name="CristalAmarillo" type="KinematicBody2D"]
+position = Vector2( 0, 19 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.999998, -28 )
+scale = Vector2( 0.0627594, 0.0641479 )
+texture = ExtResource( 1 )
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -19 )
+shape = SubResource( 2 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 2 )]
+position = Vector2( -0.675249, -0.218244 )
+scale = Vector2( 0.0376282, 0.0423584 )
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 17.9453, -443.401 )
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+
+[editable path="Hurtbox"]
