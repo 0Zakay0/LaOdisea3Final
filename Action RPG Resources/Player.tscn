@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://hitboxes/Hitbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://hitboxes/Hurtbox.tscn" type="PackedScene" id=3]
 
 [sub_resource type="StreamTexture" id=4]
 flags = 4
@@ -100,7 +101,10 @@ radius = 6.99998
 height = 8.00004
 
 [sub_resource type="CircleShape2D" id=6]
-radius = 24.0
+radius = 36.0
+
+[sub_resource type="CapsuleShape2D" id=8]
+height = 14.0
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -133,4 +137,20 @@ position = Vector2( 4, 4 )
 shape = SubResource( 6 )
 disabled = false
 
+[node name="Hurtbox" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 8, 4 )
+shape = SubResource( 8 )
+
+[node name="HUDCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthLabel" type="Label" parent="HUDCanvasLayer"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 50 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+
 [editable path="Position2D/Hitbox"]
+[editable path="Hurtbox"]

@@ -6,14 +6,19 @@ const FRICTION = 500
 var Velocity = Vector2.ZERO
 
 onready var animationPlayer = $AnimationPlayer
-var is_attacking = false  # Aquí se declara la variable is_attacking
+var is_attacking = false
 var attack_cooldown = 1.0
 var attack_timer = 0.0
+var damage_amount = 5
 
+var player_health = 105  # Initial health value
+
+# HUD elements
+onready var healthLabel = $HUDCanvasLayer/HealthLabel
 
 func _ready():
-	# Código de inicialización aquí, si es necesario
-	pass
+	connect("player_hit", self, "_on_player_hit")
+	connect("player_hurt", self, "_on_player_hurt")
 
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
@@ -33,7 +38,6 @@ func _physics_process(delta):
 		animationPlayer.play("Atacar")
 
 	if is_attacking and animationPlayer.is_playing():
-		# Aplica aceleración suave durante el ataque
 		Velocity = Velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 	else:
 		if input_vector != Vector2.ZERO:
@@ -44,5 +48,34 @@ func _physics_process(delta):
 			Velocity = Velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 
 	Velocity = move_and_slide(Velocity)
+	
+	
+func reset_position():
+	position = Vector2(40, 250)  # Cambia esto según las coordenadas deseadas
+	
+func update_hud():
+	# Update the player's health
+	player_health -= damage_amount
+	if player_health <= 0:
+		healthLabel.text = "GAME OVER"
+		reset_position()
+		player_health = 100 
+		
+		# Ensure health doesn't go below zero
+		# Handle player death or other game over logic here
+
+	# Update the health label in the HUD
+	healthLabel.text = "Health: " + str(player_health)
+	
+
+	# Lógica para manejar el daño infligido por la Hitbox, como restar la salud del enemigo o reproducir una animación de ataque
 
 
+	# Lógica para manejar el daño recibido por la Hurtbox, como restar la salud del jugador o reproducir una animación de herida
+	
+
+
+func _on_Hurtbox_area_entered(area):
+	emit_signal("player_hurt", damage_amount)
+	update_hud()
+	
